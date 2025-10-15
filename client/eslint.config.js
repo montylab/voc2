@@ -19,5 +19,12 @@ export default defineConfig([
       ecmaVersion: 2020,
       globals: globals.browser,
     },
+    rules: {
+      'indent': ['error', 'tab'],
+      'semi': ['error', 'never'],
+      'quotes': ['error', 'single', { allowTemplateLiterals: true }],
+      'jsx-quotes': ['error', 'prefer-double'],
+      'max-len': ['error', { code: 100, tabWidth: 4, ignoreStrings: true, ignoreTemplateLiterals: true }],
+    },
   },
 ])

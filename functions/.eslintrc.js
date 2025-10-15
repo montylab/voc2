@@ -26,8 +26,10 @@ module.exports = {
     "import",
   ],
   rules: {
-    "quotes": ["error", "double"],
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "semi": ["error", "never"],
     "import/no-unresolved": 0,
-    "indent": ["error", 2],
+    "indent": ["error", "tab"],
+    "max-len": ["error", { "code": 100, "tabWidth": 4, "ignoreStrings": true, "ignoreTemplateLiterals": true }],
   },
 };

@@ -5,12 +5,12 @@ This document outlines the step-by-step development plan for Voc, following MVP-
 ## Phase 1: Foundation & Setup
 
 ### 1.1 Project Structure Setup
-- [ ] **1.1.1** Create Firebase project and configure hosting
-- [ ] **1.1.2** Set up client project structure (flatten from `client/voc-client/`)
-- [ ] **1.1.3** Set up functions project structure at root level
-- [ ] **1.1.4** Configure ESLint + Prettier with tab indentation
-- [ ] **1.1.5** Set up TypeScript strict mode for both projects
-- [ ] **1.1.6** Configure Firebase Emulator Suite for local development
+- [x] **1.1.1** Create Firebase project and configure hosting
+- [x] **1.1.2** Set up client project structure
+- [x] **1.1.3** Set up functions project structure at root level
+- [x] **1.1.4** Configure ESLint + Prettier with tab indentation
+- [x] **1.1.5** Set up TypeScript strict mode for both projects
+- [x] **1.1.6** Configure Firebase Emulator Suite for local development
 
 ### 1.2 Authentication (Google)
 - [ ] **1.2.1** Set up Firebase Auth with Google provider
