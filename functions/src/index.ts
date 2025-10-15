@@ -7,9 +7,10 @@
  * See a full list of supported triggers at https://firebase.google.com/docs/functions
  */
 
-import {setGlobalOptions} from "firebase-functions";
-import {onRequest} from "firebase-functions/https";
-import express, {Request, Response} from "express";
+import {setGlobalOptions} from 'firebase-functions'
+import {onRequest} from 'firebase-functions/https'
+import express, {Request, Response} from 'express'
+import {requireAuth, type AuthedRequest} from './utils/auth'
 // import * as logger from "firebase-functions/logger";
 
 // Start writing functions
@@ -25,12 +26,16 @@ import express, {Request, Response} from "express";
 // functions should each use functions.runWith({ maxInstances: 10 }) instead.
 // In the v1 API, each function can only serve one request per container, so
 // this will be the maximum concurrent request count.
-setGlobalOptions({maxInstances: 10});
+setGlobalOptions({maxInstances: 2})
 
-const app = express();
+const app = express()
 
-app.get("/api/health", (_req: Request, res: Response) => {
-  res.json({ok: true}); 
-});
+app.get('/api/health', (_req: Request, res: Response) => {
+	res.json({ok: true})
+})
 
-export const api = onRequest(app);
+app.get('/api/secure/ping', requireAuth, (req: AuthedRequest, res: Response) => {
+	res.json({ok: true, uid: req.user?.uid})
+})
+
+export const api = onRequest(app)

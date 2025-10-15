@@ -1,6 +1,6 @@
 Project has following pages (screens):
-    - Home
-    - Auth (log in, sign up)
+    - Home (/)
+    - Login (/log-in)
     - Upload
     - Words Wizard
     - Vocabulary
@@ -28,8 +28,10 @@ Global UI components:
         - Wizard (if has user unfinished wizard)
 
 
-#Auth: log in
-    - Firebase Auth with Google provider (sign up / log in)
+#Login (/log-in)
+    - Google sign-in (Firebase Auth)
+    - On successful sign-in, redirect to '/'
+    - On sign-out (from header), redirect to '/log-in'
 
 
 #Upload

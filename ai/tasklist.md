@@ -13,11 +13,11 @@ This document outlines the step-by-step development plan for Voc, following MVP-
 - [x] **1.1.6** Configure Firebase Emulator Suite for local development
 
 ### 1.2 Authentication (Google)
-- [ ] **1.2.1** Set up Firebase Auth with Google provider
-- [ ] **1.2.2** Create "Sign in with Google" button and auth state
-- [ ] **1.2.3** Redirect to /home after login; sign-out clears session
-- [ ] **1.2.4** Add requireAuth middleware to Firebase Functions
-- [ ] **1.2.5** Test auth flow end-to-end
+- [x] **1.2.1** Set up Firebase Auth with Google provider
+- [x] **1.2.2** Create "Sign in with Google" button and auth state
+- [x] **1.2.3** Routing and redirects: /log-in page; sign-in -> /; sign-out -> /log-in
+- [x] **1.2.4** Add requireAuth middleware to Firebase Functions
+ - [x] **1.2.5** Test auth flow end-to-end (includes /log-in flow)
 
 ### 1.3 File Upload & Wizard Start
 - [ ] **1.3.1** Set up Firebase Storage for file uploads (if needed later)
