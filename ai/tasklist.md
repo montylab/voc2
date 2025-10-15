@@ -17,14 +17,13 @@ This document outlines the step-by-step development plan for Voc, following MVP-
 - [x] **1.2.2** Create "Sign in with Google" button and auth state
 - [x] **1.2.3** Routing and redirects: /log-in page; sign-in -> /; sign-out -> /log-in
 - [x] **1.2.4** Add requireAuth middleware to Firebase Functions
- - [x] **1.2.5** Test auth flow end-to-end (includes /log-in flow)
+- [x] **1.2.5** Test auth flow end-to-end (includes /log-in flow)
 
 ### 1.3 File Upload & Wizard Start
-- [ ] **1.3.1** Set up Firebase Storage for file uploads (if needed later)
-- [ ] **1.3.2** Create file upload UI component (txt/srt only, max 5MB)
-- [ ] **1.3.3** Implement client-side text extraction for txt and srt
-- [ ] **1.3.4** Call POST /api/wizard/start and redirect to Wizard
-- [ ] **1.3.5** Test upload, extraction, and wizard start
+- [x] **1.3.1** Create file upload UI component (txt/srt only, max 5MB)
+- [x] **1.3.2** Implement client-side text extraction for txt and srt
+- [x] **1.3.3** Call POST /api/wizard/start and redirect to Wizard
+- [x] **1.3.4** Test upload, extraction, and wizard start
 
 ## Phase 2: Core NLP Pipeline
 

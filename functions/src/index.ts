@@ -7,10 +7,12 @@
  * See a full list of supported triggers at https://firebase.google.com/docs/functions
  */
 
-import {setGlobalOptions} from 'firebase-functions'
-import {onRequest} from 'firebase-functions/https'
-import express, {Request, Response} from 'express'
-import {requireAuth, type AuthedRequest} from './utils/auth'
+import { setGlobalOptions } from 'firebase-functions'
+import { onRequest } from 'firebase-functions/https'
+import express, { Request, Response } from 'express'
+import cors from 'cors'
+import { requireAuth, type AuthedRequest } from './utils/auth'
+import { wizardRouter } from './routes/wizard'
 // import * as logger from "firebase-functions/logger";
 
 // Start writing functions
@@ -26,16 +28,20 @@ import {requireAuth, type AuthedRequest} from './utils/auth'
 // functions should each use functions.runWith({ maxInstances: 10 }) instead.
 // In the v1 API, each function can only serve one request per container, so
 // this will be the maximum concurrent request count.
-setGlobalOptions({maxInstances: 2})
+setGlobalOptions({ maxInstances: 2 })
 
 const app = express()
+app.use(cors())
+app.use(express.json())
 
 app.get('/api/health', (_req: Request, res: Response) => {
-	res.json({ok: true})
+  res.json({ ok: true })
 })
 
 app.get('/api/secure/ping', requireAuth, (req: AuthedRequest, res: Response) => {
-	res.json({ok: true, uid: req.user?.uid})
+  res.json({ ok: true, uid: req.user?.uid })
 })
+
+app.use('/api/wizard', wizardRouter)
 
 export const api = onRequest(app)
